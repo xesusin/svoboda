@@ -1,0 +1,7 @@
+# Перенаправление index.html на корневой URL
+RewriteEngine On
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*)index\.html$ /$1 [L,R=301]
+
+# Если в URL запрашивается директория без указания файла, загружать index.html
+DirectoryIndex index.html
